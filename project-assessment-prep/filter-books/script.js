@@ -21,6 +21,14 @@ const books = [
   
 document.addEventListener("DOMContentLoaded", () => {
     renderBookList(books)
+    
+    let btn = document.querySelector('button');
+    btn.addEventListener('click', function() {
+        let input = document.getElementById("genre-input");
+        console.log(input.value.toString().toLowerCase());
+        let filteredBooks = books.filter((book) => book.genre.toString().toLowerCase() === input.value.toString().toLowerCase());
+        renderBookList(filteredBooks);
+    });
 })
 
 function filterBooks(genre) {
@@ -36,7 +44,9 @@ function renderBookList(books) {
         li.innerText = `${book.title} by ${book.author} (${book.genre})`
         bookList.appendChild(li);
     });
-}
+};
+
+
 
   
   
