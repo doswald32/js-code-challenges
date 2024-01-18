@@ -10,3 +10,15 @@ const dogs = [
     { name: "Toto", breed: "Terrier" },
     { name: "Susan", breed: "Corgi" },
 ];
+
+let corgis = dogs.filter((dog) => dog.breed === "Corgi");
+
+let btn = document.getElementById("corgi-button");
+btn.addEventListener('click', function() {
+    corgis.forEach(function(corgi) {
+    let li = document.createElement('li');
+    li.textContent = corgi.name;
+    let h3 = document.querySelector("h3");
+    h3.appendChild(li);
+    });
+});
