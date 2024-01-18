@@ -15,7 +15,18 @@ BONUS: Use the reduce method to sum the even numbers from the array - try this a
 
 const numbers = [2, 5, 8, 10, 3, 6];
 
-  
+function sumEvenNumbers(array) {
+    let evenArray = array.filter((number) => number % 2 === 0);
+    let sum = 0;
+    evenArray.forEach((number) => sum += number);
+    return sum;
+};
 
+function sumEvenUsingReduce(array) {
+    let evenArray = array.filter((number) => number % 2 === 0);
+    let initialValue = 0;
+    const sum = evenArray.reduce((accumulator, currentValue) => accumulator + currentValue, initialValue,);
+    return sum;
+};
 
 
